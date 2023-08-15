@@ -20,7 +20,6 @@ const Navigation = () => {
 
     const submenuItems = ['Submenu 1', 'Submenu 2'];
     const parentSubmenuItems = ['Submenu 1', 'Submenu 2'];
-    const carRepairDropdown = ['Car Repair', 'Car Color'];
 
     return (
         <div className="navbar bg-base-100">
@@ -95,12 +94,6 @@ const Navigation = () => {
                     </li>
                     <li>
                         <Link to="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Car Services</summary>
-                            <Submenu items={carRepairDropdown} />
-                        </details>
                     </li>
                 </ul>
             </div>
