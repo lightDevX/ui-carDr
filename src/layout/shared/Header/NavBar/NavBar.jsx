@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../../assets/logo.svg';
 
 const Submenu = ({ items }) => {
     return (
@@ -72,7 +73,7 @@ const Navigation = () => {
                     )}
                 </div>
                 <Link to="/" className="btn btn-ghost normal-case text-xl">
-                    <img src="/path-to-your-logo.png" alt="Logo" className="h-8" />
+                    <img src={logo} alt="Logo" className="h-8" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
