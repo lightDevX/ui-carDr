@@ -18,12 +18,12 @@ const Banner = () => {
 
     return (
         <>
-            <div className="carousel w-full mt-5 mb-5">
+            <div className="carousel w-full mt-5">
                 {imageUrls.map((imageUrl, index) => (
                     <div key={`slide${index}`} className={`carousel-item relative w-full h-[600px] ${currentSlide === index ? 'visible' : 'hidden'}`}>
                         <img src={imageUrl} alt={`Slide ${index}`} className="w-full rounded-xl" />
 
-                        <div className="absolute flex h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                        <div className="absolute rounded-xl flex h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                             <div className=' space-y-4 pl-24 pt-24'>
                                 <h2 className=' text-6xl text-white font-semibold w-[450px] h-[225px]'>Affordable Price For Car Servicing</h2>
                                 <p className=' text-white w-[525px] h-14 '>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
