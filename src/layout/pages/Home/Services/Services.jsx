@@ -1,20 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ServicesCard from "./ServicesCard";
 
 
 const Services = () => {
     const [services, setServices] = useState([]);
 
+    useEffect(() => {
+        fetch('utils/services.json')
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, []);
+
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
+            <div className=" text-center mt-4">
+                <h3 className=" text-3xl text-[#FF3811] font-semibold">Service</h3>
+                <h5 className="text-5xl font-bold">
+                    Our Service Area
+                </h5>
+                <p>the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    services.map(service => <ServicesCard
+                        key={service._id}
+                        service={service}
+                    ></ServicesCard>)
+                }
             </div>
         </div>
     );
