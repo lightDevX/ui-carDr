@@ -52,7 +52,7 @@ const Navigation = () => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <Link to="/item1">Home</Link>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
                                 <Link to="#" onClick={() => setParentSubmenuVisible(!parentSubmenuVisible)}>
@@ -69,6 +69,9 @@ const Navigation = () => {
                             <li>
                                 <Link to="/blog">Blog</Link>
                             </li>
+                            <li>
+                                <Link to="/login">Login</Link>
+                            </li>
                         </ul>
                     )}
                 </div>
@@ -79,7 +82,7 @@ const Navigation = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li>
-                        <Link to="/item1">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li tabIndex={0}>
                         <details>
@@ -95,6 +98,9 @@ const Navigation = () => {
                     </li>
                     <li>
                         <Link to="/blog">Blog</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Login</Link>
                     </li>
                 </ul>
             </div>
