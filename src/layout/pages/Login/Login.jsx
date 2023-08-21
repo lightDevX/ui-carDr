@@ -36,7 +36,7 @@ const Login = () => {
                                 <input type="button" value="Login" className="btn btn-primary" />
                             </div>
                             <hr />
-                            <p>If new user <Link to={'/sign-up'}></Link> </p>
+                            <p>If new user <Link to={'/signup'}>SignUp</Link> </p>
                         </form>
                     </div>
                 </div>
