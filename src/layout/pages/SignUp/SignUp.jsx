@@ -33,7 +33,7 @@ const SignUp = () => {
                     <div className="card-body">
                         <form onSubmit={handleSignUp}>
                             <div className="form-control">
-                                <h1 className="text-2xl text-center font-bold">Login now!</h1>
+                                <h1 className="text-2xl text-center font-bold">SignUp now!</h1>
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
@@ -50,12 +50,9 @@ const SignUp = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text" placeholder="password" name='password' className="input input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input type="button" value="Sign Up" className="btn btn-primary" />
+                                <input type="submit" value="Sign Up" className="btn btn-primary" />
                             </div>
                         </form>
                     </div>
