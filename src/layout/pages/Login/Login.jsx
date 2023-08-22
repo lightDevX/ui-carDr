@@ -1,10 +1,27 @@
 import { Link } from 'react-router-dom';
 import loginImg from '../../../assets/images/login/login.svg'
+import { useContext } from 'react';
+import { AuthContext } from '../../../routes/Auth/AuthProvider/AuthProvider';
 
 const Login = () => {
 
+    const { loginUser } = useContext(AuthContext);
+
     const handleLoign = event => {
         event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(email, password);
+
+        loginUser(email, password)
+            .then(result => {
+                const logedUser = result.user;
+                console.log(logedUser);
+            })
+            .catch(error => console.log(error))
+
     }
 
     return (
@@ -21,22 +38,22 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="text" placeholder="email" name='email' className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
+                                <input type="text" placeholder="password" name='password' className="input input-bordered" />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input type="button" value="Login" className="btn btn-primary" />
+                                <input type="submit" value="Login" className="btn btn-primary" />
                             </div>
-                            <hr />
-                            <p>If new user <Link to={'/signup'}>SignUp</Link> </p>
+                            <hr className=' mt-6 mb-6' />
+                            <p>If new user <span className=' text-red-500'><Link to={'/signup'}>SignUp</Link></span> </p>
                         </form>
                     </div>
                 </div>
