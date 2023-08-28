@@ -5,7 +5,7 @@ import { AuthContext } from "../../../routes/Auth/AuthProvider/AuthProvider";
 const CheckOut = () => {
 
     const service = useLoaderData();
-    const { _id, title, price } = service;
+    const { _id, title, price, img } = service;
 
     const { user } = useContext(AuthContext);
 
@@ -19,10 +19,18 @@ const CheckOut = () => {
             customerName: name,
             date,
             email,
-            service: _id,
+            img,
+            service: title,
+            service_id: _id,
             price: price
         }
         console.log(order);
+
+        fetch('http://localhost:5000/checkout')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
 
     return (
