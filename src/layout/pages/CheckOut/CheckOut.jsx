@@ -26,7 +26,13 @@ const CheckOut = () => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/checkout')
+        fetch('http://localhost:5000/checkout', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
