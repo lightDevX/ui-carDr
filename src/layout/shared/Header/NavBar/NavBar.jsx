@@ -19,8 +19,8 @@ const Navigation = () => {
     const [submenuVisible, setSubmenuVisible] = useState(false);
     const [parentSubmenuVisible, setParentSubmenuVisible] = useState(false);
 
-    const submenuItems = ['Submenu 1', 'Submenu 2'];
-    const parentSubmenuItems = ['Submenu 1', 'Submenu 2'];
+    const submenuItems = ['Oil Change 1', 'Submenu 2'];
+    const parentSubmenuItems = ['Oil Change 1', 'Submenu 2'];
 
     return (
         <div className="navbar bg-base-100">
