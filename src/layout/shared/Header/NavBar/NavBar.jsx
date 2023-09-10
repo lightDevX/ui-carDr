@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../assets/logo.svg';
+import { AuthContext } from '../../../../routes/Auth/AuthProvider/AuthProvider';
 
 const Submenu = ({ items }) => {
+
     return (
         <ul className="p-2">
             {items.map((item, index) => (
@@ -16,11 +18,20 @@ const Submenu = ({ items }) => {
 };
 
 const Navigation = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
     const [submenuVisible, setSubmenuVisible] = useState(false);
     const [parentSubmenuVisible, setParentSubmenuVisible] = useState(false);
 
     const submenuItems = ['Oil Change 1', 'Submenu 2'];
     const parentSubmenuItems = ['Oil Change 1', 'Submenu 2'];
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     return (
         <div className="navbar bg-base-100">
@@ -69,9 +80,6 @@ const Navigation = () => {
                             <li>
                                 <Link to="/blog">Blog</Link>
                             </li>
-                            <li>
-                                <Link to="/login">Login</Link>
-                            </li>
                         </ul>
                     )}
                 </div>
@@ -99,13 +107,13 @@ const Navigation = () => {
                     <li>
                         <Link to="/blog">Blog</Link>
                     </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/button" className="btn">Button</Link>
+                {
+                    user ? <><span>{user.email}</span><Link onClick={handleLogOut} className="btn">Log Out</Link></> :
+                        <><Link to="/login" className="btn">Login</Link></>
+                }
             </div>
         </div>
     );

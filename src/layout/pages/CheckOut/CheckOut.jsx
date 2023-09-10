@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../routes/Auth/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CheckOut = () => {
 
@@ -36,6 +37,14 @@ const CheckOut = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                form.reset();
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Good job!',
+                        'You clicked the button!',
+                        'success'
+                    )
+                }
             })
     }
 
