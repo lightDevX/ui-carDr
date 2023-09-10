@@ -80,6 +80,9 @@ const Navigation = () => {
                             <li>
                                 <Link to="/blog">Blog</Link>
                             </li>
+                            <li>
+                                <Link to="/booking">Bookings</Link>
+                            </li>
                         </ul>
                     )}
                 </div>
@@ -106,6 +109,10 @@ const Navigation = () => {
                     </li>
                     <li>
                         <Link to="/blog">Blog</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/booking">Bookings</Link>
                     </li>
                 </ul>
             </div>
